@@ -164,11 +164,11 @@ def problem0a(n):
     #        ASK FOR HELP if you do not understand this hint.
     # ------------------------------------------------------------------
     sum_d = sum_of_digits(n)
-    if sum_d/2 % 2 ==1:
+    if sum_d / 2 % 2 == 1:
         return True
     else:
         False
-    return(sum_of_digits(n) % 2 == 1
+    return (sum_of_digits(n) % 2 == 1)
 
 
 def run_test_problem0b():
@@ -234,10 +234,11 @@ def problem0b(n):
     ####################################################################
     # ------------------------------------------------------------------
     count = 0
-    for k in range(n-1):
-        if is_prime(k+2):
+    for k in range(n - 1):
+        if is_prime(k + 2):
             count = count + 1
     return count
+
 
 def run_test_problem0c():
     """ Tests the   problem0c  function. """
@@ -304,7 +305,18 @@ def problem0c(circle, n, window):
     #   renders with a half-second pause after rendering.
     ####################################################################
     # ------------------------------------------------------------------
+    circle.attach_to(window)
+    radius = circle.radius
+    center = rg.Point(circle.center.x + (2*radius), circle.center.y)
 
+    for k in range(n):
+        circle2 = rg.Circle(center, radius)
+        circle2.attach_to(window)
+
+        center = rg.Point(center.x + (2*radius), center.y)
+        window.render(0.5)
+
+    window.render()
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
