@@ -164,6 +164,13 @@ def problem0a(n):
     #        Simply try a few examples to convince yourself of this.
     #        ASK FOR HELP if you do not understand this hint.
     # ------------------------------------------------------------------
+    # sum_d = sum_of_digits(n)
+    # if sum_d / 2 % 2 == 1:
+    #     return True
+    # else:
+    #     False
+    # return (sum_of_digits(n) % 2 == 1)
+
     sum_d = sum_of_digits(n)
     if sum_d % 2 == 1:
         return True
@@ -223,7 +230,7 @@ def problem0b(n):
            since there are 46 primes between 2 and 200.
      """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ####################################################################
@@ -232,8 +239,13 @@ def problem0b(n):
     #    **  use (call) the   is_prime   function that is DEFINED ABOVE.
     ####################################################################
     # ------------------------------------------------------------------
+    # count = 0
+    # for k in range(n - 1):
+    #     if is_prime(k + 2):
+    #         count = count + 1
+    # return count
     count = 0
-    for k in range(n - 1):
+    for k in range(n-1):
         if is_prime(k + 2):
             count = count + 1
     return count
