@@ -12,6 +12,7 @@ Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
 """  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
+import math
 
 
 def main():
@@ -146,7 +147,7 @@ def problem0a(n):
            since (2 + 4 + 6) is 12, which is NOT odd.
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ####################################################################
@@ -164,12 +165,10 @@ def problem0a(n):
     #        ASK FOR HELP if you do not understand this hint.
     # ------------------------------------------------------------------
     sum_d = sum_of_digits(n)
-    if sum_d / 2 % 2 == 1:
+    if sum_d % 2 == 1:
         return True
     else:
-        False
-    return (sum_of_digits(n) % 2 == 1)
-
+        return False
 
 def run_test_problem0b():
     """ Tests the   problem0b   function. """

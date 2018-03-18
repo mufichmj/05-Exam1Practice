@@ -2,8 +2,8 @@
 PRACTICE Test 1, problem 1.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Mariah Mufich.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -126,6 +126,7 @@ def run_test_problem1a():
     # ------------------------------------------------------------------
 
 
+
 def problem1a(m, n):
     """
     What comes in:  Integers m and n with abs(m) <= abs(n).
@@ -152,7 +153,7 @@ def problem1a(m, n):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 minutes.
     # ------------------------------------------------------------------
-
+    
 
 def run_test_problem1b():
     """ Tests the   problem1b   function. """
