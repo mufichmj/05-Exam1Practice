@@ -30,7 +30,7 @@ import rosegraphics as rg
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_problem2a()
+    # run_test_problem2a()
     run_test_problem2b()
 
 
@@ -193,7 +193,7 @@ def problem2b(rect, n, delta, win):
       :type win:    rg.RoseWindow
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
@@ -201,16 +201,25 @@ def problem2b(rect, n, delta, win):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 to 25 minutes.
     # ------------------------------------------------------------------
-    outline_color = rectangle.outline_color
-    fill_color = rectangle.fill_color
+    rect.attach_to(win)
+    corner_1 = rect.get_upper_right_corner()
+    corner_2 = rect.get_lower_left_corner()
 
-    height = rectangle.get_height()
-    width = rectangle.get_width()
-    center = rectangle.get_center()
+    for k in range(n):
 
-    rectangle.attach_to(window)
+        rectangle = rg.Rectangle(corner_1, corner_2)
+        rectangle.attach_to(win)
 
-    window.render()
+        x_upper = rectangle.get_upper_right_corner().x + delta
+        y_upper = rectangle.get_upper_right_corner().y - delta
+        corner_1 = rg.Point(x_upper, y_upper)
+
+        x_lower = rectangle.get_lower_left_corner().x - delta
+        y_lower = rectangle.get_lower_left_corner().y + delta
+        corner_2 = rg.Point(x_lower, y_lower)
+
+    win.render(.5)
+
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
