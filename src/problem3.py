@@ -149,7 +149,7 @@ def problem3a(window, point, n):
 
     for k in range(n):
         start = rg.Point(point.x + (k * 20), point.y)
-        end = rg.Point(point.x, point.y + 50 + (k * 10))
+        end = rg.Point(point.x + (k * 20), point.y + 50 + (k * 10))
         line = rg.Line(start, end)
         line.thickness = 1 + (k*2)
 
