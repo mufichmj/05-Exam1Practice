@@ -110,23 +110,28 @@ def problem2a(circle, rectangle, window):
     #    DIFFICULTY:      6
     #    TIME ESTIMATE:   10 to 15 minutes.
     # ------------------------------------------------------------------
-    circle.attach_to(window)
-    rectangle.attach_to(window)
+
+
 
     radius = circle.radius
-    center = rg.Point(circle.center.x, circle.center.y)
-    circle = rg.Circle(center, radius)
+    # center = rg.Point(circle.center.x, circle.center.y)
+    circle = rg.Circle(circle.center, radius)
+    circle_fill_color = circle.fill_color
+    circle.attach_to(window)
 
     rectangle = rg.Rectangle(rectangle.get_upper_left_corner(), rectangle.get_lower_right_corner())
+    rectangle.attach_to(window)
     window.continue_on_mouse_click()
 
     line = rg.Line(corner_1, corner_2)
+    line.attach_to(window)
     window.continue_on_mouse_click()
 
-    circle.fill_color = 'pink'
-    rectangle.outline_color = 'pink'
+    circle_fill_color = circle.fill_color
+    rectangle_outline_color = rectangle.outline_color
 
-    window.render()
+    window.render(0.5)
+
 
 
 def run_test_problem2b():
@@ -199,7 +204,16 @@ def problem2b(rect, n, delta, win):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 to 25 minutes.
     # ------------------------------------------------------------------
+    outline_color = rectangle.outline_color
+    fill_color = rectangle.fill_color
 
+    height = rectangle.get_height()
+    width = rectangle.get_width()
+    center = rectangle.get_center()
+
+    rectangle.attach_to(window)
+
+    window.render()
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
