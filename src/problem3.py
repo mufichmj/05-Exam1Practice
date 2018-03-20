@@ -37,7 +37,7 @@ def main():
 def run_test_problem3a():
     """ Tests the   problem3a   function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  problem1a  function defined below.
     #   Include at least **   5   ** tests (we wrote four for you).
     # ------------------------------------------------------------------
@@ -103,6 +103,18 @@ def run_test_problem3a():
     # your choice), add 1 more test case of your own choosing.
     # ------------------------------------------------------------------
 
+    # Window 5:
+    window5 = rg.RoseWindow(350, 200, title)
+
+    # Test 5:
+    point = rg.Point(30, 30)
+    expected = 36
+    answer = problem3a(window5, point, 6)
+    print()
+    print('Test 5 expected:', expected)
+    print('       actual:  ', answer)
+
+    window5.close_on_mouse_click()
 
 def problem3a(window, point, n):
     """
@@ -145,10 +157,9 @@ def problem3a(window, point, n):
     #    DIFFICULTY:      7 or 8
     #    TIME ESTIMATE:   20 to 35 minutes.
     # ------------------------------------------------------------------
-    point.attach_to(window)
 
     for k in range(n):
-        start = rg.Point(point.x + (k * 20), point.y)
+        start = rg.Point(point.x + (k * 20), point.y + (k * 10))
         end = rg.Point(point.x + (k * 20), point.y + 50 + (k * 10))
         line = rg.Line(start, end)
         line.thickness = 1 + (k*2)
@@ -225,7 +236,19 @@ def problem3b(m, point1):
     #    DIFFICULTY:      8 or 9
     #    TIME ESTIMATE:   20 to 30 minutes.
     # ------------------------------------------------------------------
+    window = rg.RoseWindow(400, 650)
 
+    for k in range(m):
+        n = (2 * k) + 3
+        point = rg.Point(point1.x, point1.y + (60 * k))
+        problem3a(window, point, n)
+
+
+        point.attach_to(window)
+
+    window.render(.5)
+
+    window.close_on_mouse_click()
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------
