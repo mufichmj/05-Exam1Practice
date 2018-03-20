@@ -245,6 +245,7 @@ def problem3b(m, point1):
 
 
         point.attach_to(window)
+        
 
     window.render(.5)
 
