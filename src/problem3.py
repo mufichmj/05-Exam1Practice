@@ -241,11 +241,11 @@ def problem3b(m, point1):
     for k in range(m):
         n = (2 * k) + 3
         point = rg.Point(point1.x, point1.y + (60 * k))
-        problem3a(window, point, n)
+        sum_thickness = problem3a(window, point, n)
+        sum_thickness = sum_thickness * k
 
 
-        point.attach_to(window)
-        
+    return sum_thickness
 
     window.render(.5)
 
